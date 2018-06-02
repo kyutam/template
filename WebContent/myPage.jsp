@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,8 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="imagetoolbar" content="no" />
-	<meta http-equiv="description" content="" />
-	<meta http-equiv="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
 	<title>MyPage画面</title>
 
 	<style type="text/css">
@@ -16,8 +17,8 @@
 
 	body {
 		margin: 0;
-		paddding: 0;
-		line-heght: 1.6;
+		padding: 0;
+		line-height: 1.6;
 		letter-spacing: 1px;
 		font-family: Verdana,Helvetica, sans-serif;
 		font-size: 12px;
@@ -39,7 +40,7 @@
 	#header {
 		width: 100%;
 		height: 80px;
-		text-align: center;
+		background-color:black;
 	}
 
 	#main {
@@ -51,7 +52,7 @@
 	#footer  {
 		width: 100%;
 		height: 80px;
-		backgroung-color: black;
+		background-color: black;
 		clear:both;
 	}
 	</style>
@@ -71,7 +72,12 @@
 				<tr>
 					<td>商品名</td>
 					<td><s:property value ="session.buyItem_name" /></td>
-					<span>円</span>
+				<tr>
+					<td>値段</td>
+					<td>
+						<s:property value="session.total_price" />
+						<span>円</span>
+					</td>
 				</tr>
 				<tr>
 					<td>購入回数</td>
